@@ -18,7 +18,7 @@ class RencanaKegiatanController extends Controller
     public function index()
     {
         $data['title'] = 'RENCANA KEGIATAN';
-        return view('transaksi.rencanakegiatan.index', $data);
+        return view('transaksi.rencanaKegiatan.index', $data);
     }
 
     public function form(){
@@ -31,7 +31,7 @@ class RencanaKegiatanController extends Controller
         $rkHeader->desa_id = 1;
         $rkHeader->save();        
         $data['id'] = $rkHeader->id;
-        return view('transaksi.rencanakegiatan.form', $data);
+        return view('transaksi.rencanaKegiatan.form', $data);
     }
 
     public function getpelaksana(Request $request)
@@ -150,7 +150,7 @@ class RencanaKegiatanController extends Controller
 
         // /dd($data);
 
-        $pdf = PDF::loadView('transaksi.rencanakegiatan.laporan', $data)->setPaper('a4', 'landscape');;
+        $pdf = PDF::loadView('transaksi.rencanaKegiatan.laporan', $data)->setPaper('a4', 'landscape');;
         return $pdf->download('rencanakegiatan.pdf');
     }
 
@@ -160,7 +160,7 @@ class RencanaKegiatanController extends Controller
         $data['sumberAnggaran'] = sumberAnggaran::all();
         $data['bidang'] = bidang::all();
         $data['rkheader'] = RencanaKegiatanHeader::where('id',$id)->first();
-        return view('transaksi.rencanakegiatan.form-edit', $data);
+        return view('transaksi.rencanaKegiatan.form-edit', $data);
     }
     public function delete($id)
     {

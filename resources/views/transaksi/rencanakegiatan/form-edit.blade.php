@@ -246,6 +246,7 @@
             var pekerjaan = $("#pekerjaan").val();
             var pagu = $("#pagu").autoNumeric('get');
             var sumber_anggaran_id = $("#sumber_anggaran_id").val();
+            var pelaksana = $("#pelaksana").val();
             
             $.ajax({
                     type:'POST',
@@ -258,7 +259,8 @@
                         kegiatan_id:kegiatan_id,
                         pekerjaan:pekerjaan,
                         pagu:pagu,
-                        sumber_anggaran_id:sumber_anggaran_id
+                        sumber_anggaran_id:sumber_anggaran_id,
+                        pelaksana:pelaksana
                     },
                     success: (data) => {
                         console.log('Success');

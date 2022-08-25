@@ -131,7 +131,11 @@
                 </div>
             </li>
 
-      
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('lpj') }}">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>L P J</span></a>
+            </li>
 
            
             <!-- Divider -->

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DasboardController;
+use App\Http\Controllers\LpjController;
 use App\Http\Controllers\Master\BidangKegiatanController;
 use App\Http\Controllers\Master\DesaController;
 use App\Http\Controllers\Master\SumberAnggaranController;
@@ -135,6 +136,19 @@ Route::controller(RrkController::class)->group(function(){
     Route::get('/rrk','index')->name('rrk');
     Route::post('/rrk/getdata','getdata')->name('rrk.getdata');
     Route::post('/rrk/print','print')->name('rrk.print');
+});
 
 
+Route::controller(LpjController::class)->group(function(){
+    Route::get('/lpj','index')->name('lpj');
+    Route::get('/lpj/form','form')->name('lpj.form');
+    Route::post('/lpj/getpekerjaan','getpekerjaan')->name('lpj.getpekerjaan');
+    Route::post('/lpj/getpelaksana','getpelaksana')->name('lpj.getpelaksana');
+    Route::post('/lpj/submit','submit')->name('lpj.submit');
+    Route::post('/lpj/simpan/faktur','simpan_faktur')->name('lpj.simpan.faktur');
+    Route::get('/lpj/print/pemesanan/{id}','print_pemesanan')->name('lpj.print.pemesanan');
+    Route::get('/lpj/print/faktur/{id}','print_faktur')->name('lpj.print.faktur');
+    Route::get('/lpj/print/st/{id}','print_st')->name('lpj.print.st');
+    Route::get('/lpj/print/spk/{id}','print_spk')->name('lpj.print.spk');
+    Route::get('/lpj/form/faktur/{id}','form_faktur')->name('lpj.form.faktur');
 });
